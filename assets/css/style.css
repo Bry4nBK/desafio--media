@@ -5,14 +5,19 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.templateGrid {
+.template {
   display: grid;
   width: 100vw;
   height: 100vh;
-  grid-template: "head nav" 3rem "article article" 4rem "main main" 1fr "section section" 2rem "foot foot" 4rem;
+  grid-template: 
+  "head nav" 3rem 
+  "article article" 4rem 
+  "main main" 1fr 
+  "section section" 4rem 
+  "foot foot" 4rem;
 }
 
-.layout-header {
+.header-1 {
   background-color:  rgb(9, 206, 9);
   grid-area: head;
   display: flex;
@@ -33,7 +38,7 @@ h3 {
 h2 {
   text-align: center;
 }
-.layout-article {
+.seeker {
 
   grid-area: article;
   display: flex;
@@ -44,7 +49,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-.button-priority {
+.gogle {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -70,11 +75,11 @@ h2 {
   font-size: 30px;
 }
 
-.layout-sidebar {
+.list {
   display: none;
 }
 
-.layou-main {
+.body-main {
   grid-area: main;
   padding: 10px;
   overflow-y: scroll; 
@@ -84,22 +89,23 @@ h2 {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 columnas iguales */
-  grid-template-rows: repeat(1, 1fr); /* 2 filas iguales */
-  grid-gap: 10px; /* Espacio entre las imágenes */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px; 
 }
 
 
 .card {
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 10%;
 }
 
 img {
+  border-radius: 11%;
   width: 300px;
   height: 200px;
   max-width: 100%;
@@ -161,12 +167,12 @@ img {
 }
 
 @media (min-width: 576px) {
-  .templateGrid {
+  .template {
     display: grid;
     grid-template: [header-left] "head article article" 4rem [article-right] [main-left] "nav main main" 1fr [main-right] [footer-left] "foot section section" 5rem [section-right]/1fr 5fr;
   }
 
-  .layout-sidebar {
+  .list {
     background-color: rgb(9, 206, 9);
     grid-area: nav;
     display: flex;
@@ -176,16 +182,16 @@ img {
     align-items: center;
     padding-left: 10px;
   }
-  .layout-article {
+  .seeker {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px; /* Ajusta este margen según sea necesario */
+    margin: 20px; 
   }
-.layou-main{
-  overflow-y: scroll; /* Agrega scroll vertical */
-  overflow-x: hidden; /* Oculta el scroll horizontal */
+.body-main{
+  overflow-y: scroll; 
+  overflow-x: hidden; 
   max-height: 70vh;
 }
 

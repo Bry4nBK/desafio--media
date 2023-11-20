@@ -1,0 +1,192 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.templateGrid {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template: "head nav" 3rem "article article" 4rem "main main" 1fr "section section" 2rem "foot foot" 4rem;
+}
+
+.layout-header {
+  background-color:  rgb(9, 206, 9);
+  grid-area: head;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 3px 0px 10px 0px;
+}
+
+h3 {
+  margin-bottom: 10px; 
+}
+h2 {
+  text-align: center;
+}
+.layout-article {
+
+  grid-area: article;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px; 
+  margin-bottom: 20px;
+}
+
+.button-priority {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.first-button {
+  background: white;
+  padding: 5px;
+  width: 90%;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  background-color: rgb(9, 206, 9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.layout-sidebar {
+  display: none;
+}
+
+.layou-main {
+  grid-area: main;
+  padding: 10px;
+  overflow-y: scroll; 
+  overflow-x: hidden; 
+  max-height: 70vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 columnas iguales */
+  grid-template-rows: repeat(1, 1fr); /* 2 filas iguales */
+  grid-gap: 10px; /* Espacio entre las imágenes */
+}
+
+
+.card {
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 300px;
+  height: 200px;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.butonFrame {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.buton {
+  padding: 5px;
+  width: 100%;
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.layout-section {
+  background-color: white;
+  grid-area: section;
+  display: flex;
+  justify-content: center;
+}
+.layout-section .button {
+  display: flex;
+  justify-content: center;
+}
+.layout-section .button button {
+  width: 50px;
+  margin: 0 7px; 
+}
+.layout-footer {
+  background-color: rgb(5, 97, 5);
+  color: white;
+  grid-area: foot;
+  display: grid;
+}
+.layout-footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .templateGrid {
+    display: grid;
+    grid-template: [header-left] "head article article" 4rem [article-right] [main-left] "nav main main" 1fr [main-right] [footer-left] "foot section section" 5rem [section-right]/1fr 5fr;
+  }
+
+  .layout-sidebar {
+    background-color: rgb(9, 206, 9);
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    padding-left: 10px;
+  }
+  .layout-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px; /* Ajusta este margen según sea necesario */
+  }
+.layou-main{
+  overflow-y: scroll; /* Agrega scroll vertical */
+  overflow-x: hidden; /* Oculta el scroll horizontal */
+  max-height: 70vh;
+}
+
+}

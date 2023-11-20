@@ -1,0 +1,150 @@
+body { 
+    padding: 0; 
+    margin: 0;
+}
+
+.templateGrid {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template: 
+    "head nav" 3rem
+    "article article" 4rem
+    "main main" 1fr
+    "section section" 2rem
+    "foot foot" 4rem;
+}
+
+.layout-header{
+    background-color: skyblue;
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+}
+a {
+    text-decoration: none;
+    color: black;
+    padding: 3px 0px 10px 0px;
+}
+
+.layout-article{
+    background-color: aqua;
+    grid-area: article;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-priority {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.first-button {
+    padding: 5px;
+    width: 90%;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+} 
+
+.menu{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+
+
+
+.layout-sidebar {
+    display: none;
+}
+
+.layou-main{
+    grid-area: main;
+    padding: 10px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax (300px, 1fr ));
+    grid-gap: 10px
+}
+
+.card {
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.butonFrame {
+    display: flex;
+    justify-content: center;
+    margin: 10px; 
+}
+
+.buton {
+    padding: 5px;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.layout-section {
+    background-color: bisque;
+    grid-area: section;
+    display: flex;
+}
+
+.layout-footer {
+    background-color: black;
+    color: white;
+    grid-area: foot;
+    display: grid;
+}
+
+@media (min-width: 576px ) {
+    .templateGrid{
+        display: grid;
+        grid-template: 
+        [header-left] "head article article" 4rem [article-right]
+        [main-left] "nav main main" 1fr [main-right]
+        [footer-left] "foot section section" 5rem [section-right]
+        / 1fr 5fr;
+    }
+    .layout-sidebar{
+        background-color: red;
+        grid-area: nav;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+}
